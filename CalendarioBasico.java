@@ -27,7 +27,16 @@ public class CalendarioBasico
      */
     public void avanzarFecha()
     {
-        
+        if(dia <31)
+        {dia= dia + 1;}
+        if(dia ==31)
+        {dia = 1;
+         mes = mes + 1;
+        }
+        if(mes ==13)
+        {mes = 1;
+         ano = ano +1;
+        }
     }
     
     /**
