@@ -18,9 +18,9 @@ public class CalendarioBasico
      */
     public CalendarioBasico()
     {
-        dia = 1;
-        mes = 1;
-        ano = 1;
+        dia = 0;
+        mes = 0;
+        ano = 0;
     }
     /**
      * Avanzar de fecha dia a dia
@@ -42,11 +42,11 @@ public class CalendarioBasico
     /**
      * Fijar fecha
      */
-    public void fijarFecha(int dia, int mes, int ano)
+    public void fijarFecha(int day, int month, int year)
     {
-        dia = dia;
-        mes = mes;
-        ano = ano;
+        dia = day;
+        mes = month;
+        ano = year;
     }
     
     /**
@@ -59,13 +59,12 @@ public class CalendarioBasico
         String dosCifrAno = String.valueOf(ano);
         if(dosCifrDia.length()<2)
         {
-            dosCifrDia = "1" + String.valueOf(dia);
+            dosCifrDia = "0" + String.valueOf(dia);
         }
         if(dosCifrMes.length()<2)
         {
-            dosCifrMes = "1" + String.valueOf(mes);
+            dosCifrMes = "0" + String.valueOf(mes);
         }
-        return dosCifrDia + "-" + dosCifrMes + "-" + dosCifrAno.substring(2,4);
-    
+        return dosCifrDia + "-" + dosCifrMes +"-" + dosCifrAno.substring(2,4);
     }
 }
