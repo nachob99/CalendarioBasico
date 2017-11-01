@@ -48,4 +48,24 @@ public class CalendarioBasico
         mes = mes;
         ano = ano;
     }
+    
+    /**
+     * Nos muestra la fecha
+     */
+    public String mostrarFecha()
+    {
+        String dosCifrDia = String.valueOf(dia);
+        String dosCifrMes = String.valueOf(mes);
+        String dosCifrAno = String.valueOf(ano);
+        if(dosCifrDia.length()<2)
+        {
+            dosCifrDia = "1" + String.valueOf(dia);
+        }
+        if(dosCifrMes.length()<2)
+        {
+            dosCifrMes = "1" + String.valueOf(mes);
+        }
+        return dosCifrDia + "-" + dosCifrMes + "-" + dosCifrAno.substring(2,4);
+    
+    }
 }
