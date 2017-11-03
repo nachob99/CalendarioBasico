@@ -8,63 +8,69 @@
 public class CalendarioBasico
 {
     // instance variables - replace the example below with your own
-    private int dia;
-    private int mes;
-    private int ano;
-    
+    private int day;
+    private int month;
+    private int year;
 
     /**
      * Constructor for objects of class CalendarioBasico
      */
     public CalendarioBasico()
     {
-        dia = 0;
-        mes = 0;
-        ano = 0;
+        day = 1;
+        month = 1;
+        year = 1;
     }
+
     /**
      * Avanzar de fecha dia a dia
      */
     public void avanzarFecha()
     {
-        if(dia <31)
-        {dia= dia + 1;}
-        if(dia ==31)
-        {dia = 1;
-         mes = mes + 1;
+        if(day <31)
+        {day= day + 1;}
+        if(day == 31)
+        {day = 1;
+            month = month + 1;
         }
-        if(mes ==13)
-        {mes = 1;
-         ano = ano +1;
+        if(month == 13)
+        {month = 1;
+            year = year +1;
         }
     }
-    
+
     /**
      * Fijar fecha
      */
-    public void fijarFecha(int day, int month, int year)
+    public void fijarFecha(int dia, int mes, int ano)
     {
-        dia = day;
-        mes = month;
-        ano = year;
+        day = dia;
+        month = mes;
+        year = ano;
     }
-    
+
     /**
      * Nos muestra la fecha
      */
-    public String mostrarFecha()
+    public String obtenerFecha()
     {
-        String dosCifrDia = String.valueOf(dia);
-        String dosCifrMes = String.valueOf(mes);
-        String dosCifrAno = String.valueOf(ano);
-        if(dosCifrDia.length()<2)
+        String devolverFecha= "";
+        String parte1 = day + "";
+        String parte2 = month + "";
+        String parte3 = year + "";
+        if(day < 10)
         {
-            dosCifrDia = "0" + String.valueOf(dia);
+            parte1 = "0" + parte1;
         }
-        if(dosCifrMes.length()<2)
+        if(month < 10)
         {
-            dosCifrMes = "0" + String.valueOf(mes);
+            parte2 = "0" + parte2;
         }
-        return dosCifrDia + "-" + dosCifrMes +"-" + dosCifrAno.substring(2,4);
+        if(year < 10)
+        {
+            parte3 = "0" + parte3;
+        }
+        devolverFecha = parte1 + "-" + parte2 + "-" + parte3 ;
+        return devolverFecha; 
     }
 }
